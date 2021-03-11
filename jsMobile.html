@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  
+<input type="text" id="numb" maxlength="10">
+<span id="myid"></span>
+<input type="button" onclick="addDataFunction()" value="click">
+
+<p id="pTag"></p>
+<script>
+  //document.getElementById('addcontent').addEventListener("click",addDataFunction);
+  function addDataFunction()
+  {
+    num = document.getElementById('numb').value;
+    if(isNaN(num) || num == "")	
+    {
+    	console.log('please enter number');
+    	document.getElementById('myid').innerHTML ="not a number";
+    	document.getElementById('numb').value="";
+    }
+    else if(num.length < 10) {
+    	console.log('not a mobile 10 digit number');
+    	document.getElementById('myid').innerHTML ="not a mobile 10 digit number";
+    	document.getElementById('numb').value="";
+    }
+    else {
+    	document.getElementById('myid').innerHTML ="good job";
+    }
+   
+  }
+</script>
+</body>
+</html>
