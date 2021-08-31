@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js" integrity="sha512-MRDODtdVPB+P6eG8RPTGDxaK55jJ8j+Iu2eJFUa+3lmeOLTrXfDbQ4ThAw7vx0iqYlAZodtE4ps23rd/NQHoXg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+	<table id="data">
+		<tr>
+			<td>ajay</td>
+			<td>ajay</td>
+			<td>ajay</td>
+			<td>ajay</td>
+		</tr>
+		<tr>
+			<td>ajay</td>
+			<td>ajay</td>
+			<td>awanish</td>
+			<td>ajay</td>
+		</tr>
+		<tr>
+			<td>ajay</td>
+			<td>ajay</td>
+			<td>ajay</td>
+			<td>ajay</td>
+		</tr>
+	</table>
+
+<div>
+	
+	<input type="button" value="click" onclick="createXls()">
+</div>
+	<script>
+		function createXls()
+		{
+			data = document.getElementById("data");
+			var fp = XLSX.utils.table_to_book(data,{sheet:'xlsd'});
+			XLSX.write(fp,{
+				bookType:'xlsx',
+				type:'base64'
+			});
+			XLSX.writeFile(fp, 'test.xlsx');
+		}
+
+
+	</script>
+</body>
+</html>
